@@ -7,7 +7,7 @@ export const HeatMap = () => {
 
   const yearResults = graphData?.yearResults ?? [];
   const officeNames = yearResults.map(({ yearData }) => yearData.map(({ office }) => office))[0];
-  const grantRates = yearResults.map(r => r.yearData.map(({ granted }) => granted));
+  const grantRates = yearResults.map((r) => r.yearData.map(({ granted }) => granted));
 
   const data = { x: officeNames, y: getYears(), z: grantRates };
 

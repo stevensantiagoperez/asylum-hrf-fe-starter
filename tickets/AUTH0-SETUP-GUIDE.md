@@ -51,7 +51,7 @@ export const Auth0ProviderWithConfig = ({ children }) => {
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri: window.location.origin
+        redirect_uri: window.location.origin,
       }}
       onRedirectCallback={onRedirectCallback}
     >
@@ -81,9 +81,7 @@ import { Auth0ProviderWithConfig } from './auth/auth0-provider-with-config';
 function App() {
   return (
     <BrowserRouter>
-      <Auth0ProviderWithConfig>
-        {/* Your app components */}
-      </Auth0ProviderWithConfig>
+      <Auth0ProviderWithConfig>{/* Your app components */}</Auth0ProviderWithConfig>
     </BrowserRouter>
   );
 }
@@ -99,20 +97,16 @@ import { useAuth0 } from '@auth0/auth0-react';
 function LoginButton() {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
-  return !isAuthenticated && (
-    <button onClick={() => loginWithRedirect()}>
-      Log In
-    </button>
-  );
+  return !isAuthenticated && <button onClick={() => loginWithRedirect()}>Log In</button>;
 }
 
 function LogoutButton() {
   const { logout, isAuthenticated } = useAuth0();
 
-  return isAuthenticated && (
-    <button onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
-    </button>
+  return (
+    isAuthenticated && (
+      <button onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+    )
   );
 }
 
@@ -123,12 +117,14 @@ function Profile() {
     return <div>Loading...</div>;
   }
 
-  return isAuthenticated && (
-    <div>
-      <img src={user.picture} alt={user.name} />
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-    </div>
+  return (
+    isAuthenticated && (
+      <div>
+        <img src={user.picture} alt={user.name} />
+        <h2>{user.name}</h2>
+        <p>{user.email}</p>
+      </div>
+    )
   );
 }
 ```
@@ -162,13 +158,13 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<PublicPage />} />
-      <Route 
-        path="/protected" 
+      <Route
+        path="/protected"
         element={
           <ProtectedRoute>
             <ProtectedPage />
           </ProtectedRoute>
-        } 
+        }
       />
     </Routes>
   );
@@ -200,6 +196,7 @@ For production deployment, make sure to:
 ## Support
 
 For issues and questions:
+
 - Check the [Auth0 Community](https://community.auth0.com/)
 - Review [Auth0 Documentation](https://auth0.com/docs/)
 - Contact Auth0 Support through your dashboard

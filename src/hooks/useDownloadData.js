@@ -46,7 +46,11 @@ export const useDownloadData = () => {
     const headers = Object.keys(flattenData);
     csvRows.push(headers.join(',')); // Add headers
 
-    const row = headers.map(header => JSON.stringify(flattenData[header], (key, value) => (value === null ? '' : value))).join(',');
+    const row = headers
+      .map((header) =>
+        JSON.stringify(flattenData[header], (key, value) => (value === null ? '' : value))
+      )
+      .join(',');
     csvRows.push(row); // Add the data row
 
     const csvString = csvRows.join('\n');

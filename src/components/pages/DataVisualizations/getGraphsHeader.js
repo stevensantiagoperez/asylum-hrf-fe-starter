@@ -1,6 +1,6 @@
 import { mapTypes } from './getMapView.jsx';
 
-export const getGraphsHeader = mapView => {
+export const getGraphsHeader = (mapView) => {
   let header = 'Showing: ';
 
   switch (mapView) {

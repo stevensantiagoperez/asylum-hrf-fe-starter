@@ -11,21 +11,21 @@ export default function Header() {
   const isAuthenticated = false;
 
   return (
-    <header className='flex w-[100%] primary-c justify-between px-14'>
-      <div className='flex justify-between'>
-        <NavLink to='https://www.humanrightsfirst.org/'>
-          <img className='w-[100px]' src={Logo} alt='HRF logo white' />
+    <header className="flex w-[100%] primary-c justify-between px-14">
+      <div className="flex justify-between">
+        <NavLink to="https://www.humanrightsfirst.org/">
+          <img className="w-[100px]" src={Logo} alt="HRF logo white" />
         </NavLink>
       </div>
-      <div className='flex items-center py-4 gap-16'>
-        <NavLink to='/' className='nav-btn'>
+      <div className="flex items-center py-4 gap-16">
+        <NavLink to="/" className="nav-btn">
           Home
         </NavLink>
-        <NavLink to='/graphs' className='nav-btn'>
+        <NavLink to="/graphs" className="nav-btn">
           Graphs
         </NavLink>
         {isAuthenticated && (
-          <NavLink to='/profile' className='nav-btn'>
+          <NavLink to="/profile" className="nav-btn">
             Profile
           </NavLink>
         )}

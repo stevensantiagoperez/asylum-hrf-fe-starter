@@ -12,12 +12,10 @@ const Profile = () => {
   const user = true;
 
   if (isLoading || !user) {
-    return <div className='text-center p-4'>Loading...</div>;
+    return <div className="text-center p-4">Loading...</div>;
   }
 
-  return (
-    <div>Profile Page</div>
-  );
+  return <div>Profile Page</div>;
 };
 
 export default Profile;

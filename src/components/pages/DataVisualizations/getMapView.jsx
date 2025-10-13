@@ -8,7 +8,7 @@ export const mapTypes = {
   ChoroplethMap: 'CHOROPLETH-MAP',
 };
 
-export const getMapView = mapView => {
+export const getMapView = (mapView) => {
   switch (mapView) {
     case mapTypes.ScatterPlot: {
       return <ScatterPlot />;

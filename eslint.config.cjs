@@ -6,7 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {ignores: ['dist']},
+  { ignores: ['dist'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -14,11 +14,11 @@ export default [
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: {jsx: true},
+        ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
     },
-    settings: {react: {version: '18.3'}},
+    settings: { react: { version: '18.3' } },
     plugins: {
       pluginReact,
       'react-hooks': reactHooks,
@@ -30,7 +30,7 @@ export default [
       ...pluginReact.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': ['warn', {allowConstantExport: true}],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
 ];

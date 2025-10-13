@@ -7,7 +7,7 @@ export const ScatterPlot = () => {
   const grantRates = graphData?.yearResults?.map(({ granted }) => granted) ?? [];
 
   return (
-    <div className='flex-c align-middle min-h-[400px]'>
+    <div className="flex-c align-middle min-h-[400px]">
       <Plot
         data={[
           {

@@ -14,7 +14,7 @@ const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID;
  * - Set the domain, clientId, and authorizationParams
  */
 createRoot(document.getElementById('root')).render(
-    <ProvideAppContext>
-      <App />
-    </ProvideAppContext>
+  <ProvideAppContext>
+    <App />
+  </ProvideAppContext>
 );

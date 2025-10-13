@@ -9,10 +9,12 @@ export const ChoroplethMap = () => {
   const citizenshipResults = graphData?.citizenshipResults ?? [];
   const locations = citizenshipResults.map(({ citizenship }) => citizenship);
   const z = citizenshipResults.map(({ granted }) => granted?.toFixed(2) ?? 0);
-  const text = locations.map(l => l.toLowerCase()).map(l => l.split(' ').map(capitalizr).join(' '));
+  const text = locations
+    .map((l) => l.toLowerCase())
+    .map((l) => l.split(' ').map(capitalizr).join(' '));
 
   return (
-    <div className='flex-c align-middle'>
+    <div className="flex-c align-middle">
       <Plot
         data={[
           {
