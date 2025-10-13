@@ -143,6 +143,9 @@ export const LandingPage = () => {
           Back To Top ↑
         </button>
       </section>
+      <div className="mt-4 text-xs opacity-75 font-mono">
+          {'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}
+        </div>
     </div>
   );
 };
