@@ -34,7 +34,7 @@ export const LandingPage = () => {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* 🔹 Hero Section (Main title and subtitle) */}
+      {/* Hero Section (Main title and subtitle) */}
       <section className="text-center py-12 bg-gray-50 border-b border-gray-200">
         <h1 className="text-4xl font-bold mb-3">Asylum Office Grant Rate Tracker</h1>
         <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -43,7 +43,7 @@ export const LandingPage = () => {
         </p>
       </section>
 
-      {/* 🔹 Charts Section */}
+      {/* Charts Section */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8 p-10 max-w-6xl mx-auto text-center">
         <div>
           <img src={barGraph} alt="Bar Graph" className="mx-auto mb-4 rounded-md shadow" />
@@ -94,7 +94,7 @@ export const LandingPage = () => {
         </div>
       </section>
 
-      {/* 🔹 Info Section */}
+      {/*  Info Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto py-16 px-6 items-center">
         <img src={paperStack} alt="Paper Stack" className="rounded-lg shadow-lg" />
         <p className="text-gray-700 leading-relaxed text-lg">
@@ -106,7 +106,7 @@ export const LandingPage = () => {
         </p>
       </section>
 
-      {/* 🔹 Stats Section */}
+      {/*  Stats Section */}
       <section className="text-center py-16 bg-gray-50">
         <h2 className="text-2xl font-semibold mb-10">Systemic Disparity Insights</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto text-gray-700">
@@ -144,8 +144,8 @@ export const LandingPage = () => {
         </button>
       </section>
       <div className="mt-4 text-xs opacity-75 font-mono">
-          {'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}
-        </div>
+        {'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}
+      </div>
     </div>
   );
 };
