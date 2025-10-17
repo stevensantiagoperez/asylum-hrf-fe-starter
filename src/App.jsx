@@ -6,6 +6,23 @@ import { NotFoundPage } from './components/pages/NotFound/index.jsx';
 import * as React from 'react';
 import Profile from './components/pages/Profile/index.jsx';
 import { pageWrapper } from './components/layout/PageWrapper.jsx';
+import { useAuth0 } from '@auth0/auth0-react';
+
+// Inline ProtectedRoute
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+
+  if (isLoading) {
+    return <div className="text-center p-4">Loading authentication...</div>;
+  }
+
+  if (!isAuthenticated) {
+    loginWithRedirect();
+    return null; // Prevent rendering before redirect
+  }
+
+  return children;
+}
 
 const router = createBrowserRouter([
   {
@@ -20,7 +37,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/profile',
-    element: pageWrapper(<Profile />),
+    element: pageWrapper(
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    ),
     errorElement: <NotFoundPage />,
   },
 ]);
