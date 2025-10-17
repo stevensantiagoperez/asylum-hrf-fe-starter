@@ -9,7 +9,7 @@ export const LoggingButtons = () => {
   // TODO: Replace these with Auth0 functionality
   const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
 
-  console.log("Auth0 Status →", { isAuthenticated });
+  console.log('Auth0 Status →', { isAuthenticated });
 
   // While Auth0 is initializing, prevent showing wrong button
   if (isLoading) return <button className="nav-btn px-4 py-1">Loading...</button>;
