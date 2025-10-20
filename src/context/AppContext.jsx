@@ -108,11 +108,11 @@ const useAppContextProvider = () => {
         return {
           ...yearObj,
           avgGranted,
-          granted: avgGranted, // 👈 add this alias so the chart can find it
+          granted: avgGranted,
         };
       });
 
-      // ✅ Combine both datasets into one graphData object
+      // Combine both datasets into one graphData object
       const combinedData = {
         yearResults: formattedFiscalData,
         citizenshipResults: Array.isArray(citizenshipData)
@@ -145,7 +145,7 @@ const useAppContextProvider = () => {
     }
   }, [isDataLoading]);
 
-  // Optional: automatically fetch data once on page load
+  // automatically fetch data once on page load
   useEffect(() => {
     updateQuery();
   }, []);
